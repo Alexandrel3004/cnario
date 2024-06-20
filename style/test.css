@@ -1,0 +1,496 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: system-ui;
+}
+
+.menu {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background-color: rgba(0,0,0,0.5);
+    padding-bottom: 10px;
+}
+
+.menu > ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+
+header {
+    position: relative;
+}
+
+.logo-menu-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu-logo {
+    list-style: none;
+    display: flex;
+    margin-right: 50px;
+    padding-bottom: 20px;
+    font-size: 15px;
+    padding-top: 20px;
+}
+
+.menu-logo a {
+    text-decoration: none;
+    margin-left: 30px;
+}
+
+.logo img {
+    width: 20vh;
+    height: auto;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.sous-nav {
+    list-style: none;
+    display: none;
+    top: 0;
+    left: 100%;
+    background-color: rgba(70, 69, 69, 0.397);
+    border-radius: 3px;
+    column-count: 2;
+    margin-top: 10px;
+    font-size: medium;
+}
+
+
+.a-sous-nav {
+    position: relative;
+}
+
+/* Afficher les sous-menus en bloc lorsqu'ils sont cliqués */
+.a-sous-nav > p {
+    cursor: pointer;
+}
+
+.a-sous-nav > p:hover {
+    color: white;
+}
+
+
+.a-sous-nav > p.active + .sous-nav {
+    display: block;
+}
+
+li a:hover {
+    color: white;
+}
+
+
+.burger-button {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    padding-left: 10px;
+    margin-top: -5px;
+    padding-top: 10px;
+}
+
+.burger-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(110, 110, 110, 0.753);
+    border-bottom-right-radius: 10px; 
+    transition: all 0.3s ease-out;
+}
+
+.burger-menu.active {
+    display: block;
+    transform: translateY(0);
+
+}
+
+.burger-menu-items {
+    list-style: none;
+    padding: 0;
+}
+
+.burger-menu-items li {
+    padding: 10px 20px;
+}
+
+@media (max-width: 950px) {
+    .logo img {
+        width: 15vh;
+        height: auto;
+    }
+
+    .logo-menu-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-logo {
+        font-size: small;
+        margin-right: 0;
+        display: flex;
+        justify-content: center;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        flex-wrap: wrap;
+    }
+
+    .menu-logo a {
+        margin: 5px 10px;
+    }
+
+    .burger-button {
+        order: 1; /* Ensure the button is below the menu-logo */
+        margin-top: 10px;
+        font-size: medium;
+    }
+
+    .burger-menu {
+        position: static; 
+        font-size: medium;
+        background-color: rgba(197, 195, 195, 0);
+    }
+
+    .a-sous-nav > p.active + .sous-nav {
+        display: block;
+    }
+
+    .sous-nav {
+        font-size: small;
+    }
+
+    .contenu {
+        flex-direction: row; 
+        justify-content: center; 
+        flex-wrap: wrap;
+    }
+
+    .cards-wrapper {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+}
+
+.container {
+    overflow: hidden;
+}
+
+.carousel {
+    position: relative;
+}
+
+.carousel-inner {
+    display: flex;
+    overflow: hidden;
+    height: 100vh;
+    flex-wrap: nowrap;
+}
+
+.slide {
+    flex: 0 0 100%;
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-controls {
+    position: absolute;
+    z-index: 5;
+    left: 2%;
+    right: 2%;
+    top: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.carousel-controls button {
+    padding: 10px;
+    background-color: rgba(197, 195, 195, 0.315);
+    border: 0px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.carousel-controls button:hover {
+    background-color: rgba(114, 114, 114, 0.315);
+}
+
+.carousel-dots {
+    position: absolute;
+    z-index: 5;
+    left: 50%;
+    right: 50%;
+    bottom: 5%;
+    display: flex;
+    justify-content: center;
+}
+
+.carousel-dots .dot {
+    border-radius: 50%;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.carousel-dots .dot:hover {
+    background-color: rgba(114, 114, 114, 0.315);
+}
+
+.carousel-dots .active {
+    border: 10px solid #08080885 !important;
+}
+
+.carousel-dots .inactive {
+    border: 10px solid #ffffff23;
+}
+
+
+.img-contac {
+    list-style: none;
+    position: fixed;
+    z-index: 15;
+    background-color: rgb(209, 136, 0);
+    padding: 5px;
+    right: 0;
+    margin-top: 30%;
+    margin-right: 2px; 
+
+    
+}
+
+.presta-titre {
+    text-align: center;
+    margin-top: 3%;
+}
+
+hr {
+    width: 5%;
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+    
+
+}
+
+.contenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+}
+
+.box {
+    margin-top: 3%;
+    margin-bottom: 20%;
+    position: relative; 
+    cursor: pointer;
+    transition: transform 0.4s cubic-bezier(0.23, 1.83, 0.42, 1.19);
+    width: 30vw;  /* Taille en unités relatives */
+    height: 30vw; /* Taille en unités relatives */
+    max-width: 200px;  /* Taille maximale pour écrans plus grands */
+    max-height: 200px; /* Taille maximale pour écrans plus grands */
+}
+
+.box:hover {
+    transform: scale(1.1);
+}
+
+
+.circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 3px solid black;
+    animation: boxMagic 1s linear infinite alternate, spinning 1s linear infinite;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.box .int {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    margin: 0; 
+    z-index: 1;
+}
+
+.box span {
+    position: absolute;
+    top: 110%; 
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 80%; 
+    font-size: 16px; 
+    
+}
+
+@keyframes boxMagic {
+    from {
+        box-shadow:
+        0 0 0 #feac5e,
+        0 0 0 #c779d0,
+        0 0 0 #4bc0c8,
+        0 0 0 #42db75;
+    }
+    to {
+        box-shadow:
+        0 -10px 0 #feac5e,
+        -10px 0 0 #c779d0,
+        0 10px 0 #4bc0c8,
+        10px 0 0 #42db75;
+    }
+}
+
+
+@keyframes spinning {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.para {
+    display: flex;
+    height: 400px;
+    width: 100%;
+    background-image: url('https://cnario.fr/accueil/bandeau.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.image-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px; 
+}
+
+.image-container {
+    position: relative;
+    width: 539px; 
+    height: 369.75px; 
+    margin-top: 3%;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container:hover .overlay {
+    opacity: 1;
+}
+
+.text {
+    color: white;
+    font-size: 15px;
+}
+
+.cards-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+    text-align: center;
+    margin-top: 3%;
+    
+}
+
+.card-container {
+    position: relative;
+    height: 160px;
+    width: 160px;
+    
+
+}
+.card-container:hover .card {
+    transform: rotateY(180deg);
+}
+
+.card {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transition: all 0.6s ease;
+    transform-style: preserve-3d;
+    box-shadow: rgba(0,0,0,0.35) 0 5px 15px;   
+    border-radius: 50%;
+}
+.card-front {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background:transparent;
+    backface-visibility: hidden;
+}
+
+.card-back {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: transparent;
+    backface-visibility: hidden;
+    transform: rotateY(-180deg);
+
+}
+
+.card-front img,
+.card-back img {
+    height: 100%;
+    width: 100%;
+}
+
+.card-container p {
+    position: absolute;
+    top: 105%; 
+    left: 45%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 80%; 
+    font-size: 16px; 
+}
+
